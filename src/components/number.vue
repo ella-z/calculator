@@ -5,8 +5,8 @@
                 :class= "[number.classname,{change:ischange===index}]"
                 v-for= "(number,index) in numbers"
                 @click="NumberValue(number.value,isfirst,isdot,iszero)"
-                @mousedown="dothis(index)"
-                @mouseup="dothat(index)"
+                @mousedown="mousedown(index)"
+                @mouseup="mouseup()"
             >{{number.value}}</li>
         </ul>
     </div>
@@ -62,7 +62,7 @@ export default {
         }
     },
     methods:{
-         NumberValue: function (data,isfirst,isdot,iszero) {
+        NumberValue: function (data,isfirst,isdot,iszero) {
             this.isfirst=false;
             if(data==='.')
             {
@@ -74,10 +74,10 @@ export default {
             }
             bus.$emit('number', data,isfirst,isdot,iszero);
       },
-      dothis(index){
+      mousedown(index){
           this.ischange=index;
       },
-      dothat(index){
+      mouseup(){
           this.ischange='';
           bus.$emit('changecolor', this.ischange)
       }

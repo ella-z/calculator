@@ -7,7 +7,7 @@
 <script>
 import bus from "../assets/bus.js";
 import * as math from "mathjs";
-import { parse } from "path";
+
 
 export default {
   name: "display",
@@ -37,6 +37,7 @@ export default {
           String(this.result).length === 1 &&
           String(this.result) === "0"
         ) {
+          return;
         } else {
           vm.result = vm.result + data;
         }
