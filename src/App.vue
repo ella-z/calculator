@@ -8,9 +8,11 @@
 <script>
 import keyboard from './components/keyboard.vue';
 import display  from './components/display.vue';
+import store from './components/store/store.js'
 
 export default {
   name: 'app',
+  store,
   components: {
     keyboard,
     display
@@ -27,6 +29,8 @@ body,html{
 }
 li{
   list-style: none;
+    padding: 0;
+  margin: 0
 }
 ul{
   padding: 0;

@@ -8,7 +8,6 @@
 import bus from "../assets/bus.js";
 import * as math from "mathjs";
 
-
 export default {
   name: "display",
   data: function() {
@@ -22,8 +21,11 @@ export default {
     var count = new Array(2);
     // 用$on事件来接收参数
     bus.$on("number", (data, isfirst, isdot, iszero) => {
-      if ((isfirst || first) && !isdot) {
+      if (isfirst || first) {
         vm.result = data;
+        if (isdot) {
+          vm.result = "0" + data;
+        }
         first = false;
         iszero = false;
       } else {

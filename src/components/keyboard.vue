@@ -1,7 +1,7 @@
 <template>
   <div id="keyboard">
     <div class="keyboard-l">
-      <functionoperator />
+      <functionOperator />
       <number />
     </div>
     <operator class="keyboard-r"/>
@@ -10,14 +10,14 @@
 
 <script>
 import operator from './operator.vue';
-import functionoperator from './functionoperator.vue';
+import functionOperator from './functionOperator.vue';
 import number from './number.vue';
 
 export default {
   name:'keyboard',
   components: {
      operator,
-     functionoperator,
+     functionOperator,
      number
   },
 

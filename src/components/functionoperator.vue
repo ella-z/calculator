@@ -1,11 +1,11 @@
 <template>
-  <div id="functionoperator">
+  <div id="functionOperator">
     <ul>
       <li
         :key="index"
-        v-for="(functionoperator,index) in functionoperators"
-        @click= "FunctionValue(functionoperator.value),changeColor('')"
-      >{{functionoperator.value}}</li>
+        v-for="(functionOperator,index) in functionOperators"
+        @click= "FunctionValue(functionOperator.value),changeColor('')"
+      >{{functionOperator.value}}</li>
     </ul>
   </div>
 </template>
@@ -14,10 +14,10 @@
 import bus from '../assets/bus.js';
 
 export default {
-  name: "functionoperator",
+  name: "functionOperator",
   data: function() {
     return {
-      functionoperators: [ 
+      functionOperators: [ 
         {
           value: "AC",
         },
@@ -44,7 +44,7 @@ export default {
 
 
 <style lang="scss">
-#functionoperator {
+#functionOperator {
   height: 18%;
   ul {
     display: flex;
